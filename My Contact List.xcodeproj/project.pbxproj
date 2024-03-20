@@ -9,23 +9,27 @@
 /* Begin PBXBuildFile section */
 		510BE2082B9C275D0003FF6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE2072B9C275D0003FF6A /* AppDelegate.swift */; };
 		510BE20A2B9C275D0003FF6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE2092B9C275D0003FF6A /* SceneDelegate.swift */; };
-		510BE20C2B9C275D0003FF6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510BE20B2B9C275D0003FF6A /* ViewController.swift */; };
 		510BE20F2B9C275D0003FF6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 510BE20D2B9C275D0003FF6A /* Main.storyboard */; };
 		510BE2122B9C275D0003FF6A /* My_Contact_List.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 510BE2102B9C275D0003FF6A /* My_Contact_List.xcdatamodeld */; };
 		510BE2142B9C275F0003FF6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 510BE2132B9C275F0003FF6A /* Assets.xcassets */; };
 		510BE2172B9C275F0003FF6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 510BE2152B9C275F0003FF6A /* LaunchScreen.storyboard */; };
+		5144C8B12B9C2FEA0078583B /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144C8B02B9C2FEA0078583B /* ContactViewController.swift */; };
+		5144C8B32B9C30E40078583B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144C8B22B9C30E40078583B /* MapViewController.swift */; };
+		5144C8B52B9C30F20078583B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144C8B42B9C30F20078583B /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		510BE2042B9C275D0003FF6A /* My Contact List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "My Contact List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		510BE2072B9C275D0003FF6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		510BE2092B9C275D0003FF6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		510BE20B2B9C275D0003FF6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		510BE20E2B9C275D0003FF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		510BE2112B9C275D0003FF6A /* My_Contact_List.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = My_Contact_List.xcdatamodel; sourceTree = "<group>"; };
 		510BE2132B9C275F0003FF6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		510BE2162B9C275F0003FF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		510BE2182B9C275F0003FF6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5144C8B02B9C2FEA0078583B /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		5144C8B22B9C30E40078583B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		5144C8B42B9C30F20078583B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +62,16 @@
 		510BE2062B9C275D0003FF6A /* My Contact List */ = {
 			isa = PBXGroup;
 			children = (
+				5144C8B02B9C2FEA0078583B /* ContactViewController.swift */,
 				510BE2072B9C275D0003FF6A /* AppDelegate.swift */,
 				510BE2092B9C275D0003FF6A /* SceneDelegate.swift */,
-				510BE20B2B9C275D0003FF6A /* ViewController.swift */,
 				510BE20D2B9C275D0003FF6A /* Main.storyboard */,
 				510BE2132B9C275F0003FF6A /* Assets.xcassets */,
 				510BE2152B9C275F0003FF6A /* LaunchScreen.storyboard */,
 				510BE2182B9C275F0003FF6A /* Info.plist */,
 				510BE2102B9C275D0003FF6A /* My_Contact_List.xcdatamodeld */,
+				5144C8B22B9C30E40078583B /* MapViewController.swift */,
+				5144C8B42B9C30F20078583B /* SettingsViewController.swift */,
 			);
 			path = "My Contact List";
 			sourceTree = "<group>";
@@ -142,9 +148,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				510BE2122B9C275D0003FF6A /* My_Contact_List.xcdatamodeld in Sources */,
-				510BE20C2B9C275D0003FF6A /* ViewController.swift in Sources */,
+				5144C8B32B9C30E40078583B /* MapViewController.swift in Sources */,
+				5144C8B52B9C30F20078583B /* SettingsViewController.swift in Sources */,
 				510BE2082B9C275D0003FF6A /* AppDelegate.swift in Sources */,
 				510BE20A2B9C275D0003FF6A /* SceneDelegate.swift in Sources */,
+				5144C8B12B9C2FEA0078583B /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
