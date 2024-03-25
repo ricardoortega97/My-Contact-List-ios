@@ -32,7 +32,7 @@
                             <constraint firstItem="sln-BU-EZO" firstAttribute="bottom" secondItem="805-4V-iea" secondAttribute="bottom" constant="324" id="xsG-Ss-eyU"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Map" id="qqr-t7-nQQ"/>
+                    <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="qqr-t7-nQQ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cf-cu-Z8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -46,23 +46,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HOD-Qk-RGj">
-                                <rect key="frame" x="165" y="416" width="86" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="vRc-7H-xKf">
+                                <rect key="frame" x="36.666666666666657" y="194.33333333333334" width="320" height="463.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sort Order:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E4z-dE-JQ9">
+                                        <rect key="frame" x="117.33333333333334" y="0.0" width="85" height="20.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dul-go-BJt">
+                                        <rect key="frame" x="0.0" y="119" width="320" height="216"/>
+                                    </pickerView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5jh-UX-uXe">
+                                        <rect key="frame" x="74.333333333333329" y="432.33333333333326" width="171.33333333333337" height="31"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Asending Sort:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="14I-T5-BzA">
+                                                <rect key="frame" x="0.0" y="0.0" width="112.33333333333333" height="31"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R37-ez-uHL">
+                                                <rect key="frame" x="122.33333333333334" y="0.0" width="51" height="31"/>
+                                                <connections>
+                                                    <action selector="sortDirectionChanged:" destination="D4f-zb-0sM" eventType="valueChanged" id="4QH-Kk-muf"/>
+                                                    <action selector="swAscending:" destination="D4f-zb-0sM" eventType="valueChanged" id="pOs-iJ-AzP"/>
+                                                </connections>
+                                            </switch>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="EA3-vE-lTm"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="HOD-Qk-RGj" firstAttribute="top" secondItem="EA3-vE-lTm" secondAttribute="top" constant="357" id="crh-FX-jZd"/>
-                            <constraint firstItem="EA3-vE-lTm" firstAttribute="bottom" secondItem="HOD-Qk-RGj" secondAttribute="bottom" constant="324" id="eLB-6p-fhn"/>
-                            <constraint firstItem="HOD-Qk-RGj" firstAttribute="leading" secondItem="EA3-vE-lTm" secondAttribute="leading" constant="165" id="m3Y-1N-j2h"/>
-                            <constraint firstItem="EA3-vE-lTm" firstAttribute="trailing" secondItem="HOD-Qk-RGj" secondAttribute="trailing" constant="142" id="zbo-Bp-4bR"/>
+                            <constraint firstItem="vRc-7H-xKf" firstAttribute="centerY" secondItem="jQ1-mZ-6TD" secondAttribute="centerY" id="4PI-Xm-BXe"/>
+                            <constraint firstItem="vRc-7H-xKf" firstAttribute="centerX" secondItem="jQ1-mZ-6TD" secondAttribute="centerX" id="pta-fJ-5TK"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Settings" id="AeY-aL-kfd"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="AeY-aL-kfd"/>
+                    <connections>
+                        <outlet property="pckSortField" destination="dul-go-BJt" id="Xwk-4T-0jh"/>
+                        <outlet property="swAscending" destination="R37-ez-uHL" id="TPo-2l-IPg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SnC-hR-S1P" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -340,6 +368,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="gear" catalog="system" width="128" height="122"/>
+        <image name="map" catalog="system" width="128" height="112"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
