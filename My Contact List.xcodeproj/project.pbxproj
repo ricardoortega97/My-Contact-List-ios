@@ -18,6 +18,7 @@
 		5144C8B52B9C30F20078583B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144C8B42B9C30F20078583B /* SettingsViewController.swift */; };
 		51A62F402BB20E8600B575C1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A62F3F2BB20E8600B575C1 /* Constants.swift */; };
 		51A62F432BB210CF00B575C1 /* MyContactListModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 51A62F412BB210CF00B575C1 /* MyContactListModel.xcdatamodeld */; };
+		51A62F472BB21F6A00B575C1 /* DateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51A62F462BB21F6A00B575C1 /* DateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		5144C8B42B9C30F20078583B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		51A62F3F2BB20E8600B575C1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		51A62F422BB210CF00B575C1 /* MyContactListModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyContactListModel.xcdatamodel; sourceTree = "<group>"; };
+		51A62F462BB21F6A00B575C1 /* DateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 			children = (
 				5144C8B02B9C2FEA0078583B /* ContactViewController.swift */,
 				51A62F3F2BB20E8600B575C1 /* Constants.swift */,
+				51A62F462BB21F6A00B575C1 /* DateViewController.swift */,
 				510BE2072B9C275D0003FF6A /* AppDelegate.swift */,
 				51A62F412BB210CF00B575C1 /* MyContactListModel.xcdatamodeld */,
 				510BE2092B9C275D0003FF6A /* SceneDelegate.swift */,
@@ -160,6 +163,7 @@
 				51A62F402BB20E8600B575C1 /* Constants.swift in Sources */,
 				510BE20A2B9C275D0003FF6A /* SceneDelegate.swift in Sources */,
 				51A62F432BB210CF00B575C1 /* MyContactListModel.xcdatamodeld in Sources */,
+				51A62F472BB21F6A00B575C1 /* DateViewController.swift in Sources */,
 				5144C8B12B9C2FEA0078583B /* ContactViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

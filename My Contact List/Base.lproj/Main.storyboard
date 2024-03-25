@@ -56,7 +56,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dul-go-BJt">
-                                        <rect key="frame" x="0.0" y="119" width="320" height="216"/>
+                                        <rect key="frame" x="0.0" y="118.33333333333334" width="320" height="216.00000000000003"/>
                                     </pickerView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="5jh-UX-uXe">
                                         <rect key="frame" x="74.333333333333329" y="432.33333333333326" width="171.33333333333337" height="31"/>
@@ -251,7 +251,7 @@
                                                         <state key="normal" title="Button"/>
                                                         <buttonConfiguration key="configuration" style="plain" title="Change"/>
                                                         <connections>
-                                                            <segue destination="Uz3-AA-zTH" kind="show" id="m1X-cX-UFZ"/>
+                                                            <segue destination="Uz3-AA-zTH" kind="show" identifier="segueContactDate" id="m1X-cX-UFZ"/>
                                                         </connections>
                                                     </button>
                                                 </subviews>
@@ -305,12 +305,12 @@
         <!--Birthday-->
         <scene sceneID="Xmp-2Z-PjU">
             <objects>
-                <viewController title="Birthday" id="Uz3-AA-zTH" sceneMemberID="viewController">
+                <viewController title="Birthday" id="Uz3-AA-zTH" customClass="DateViewController" customModule="My_Contact_List" customModuleProvider="target" propertyAccessControl="all" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="R8w-OT-sCx">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="eAu-f4-P4I">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="eAu-f4-P4I">
                                 <rect key="frame" x="0.0" y="103" width="393" height="216"/>
                             </datePicker>
                         </subviews>
@@ -323,6 +323,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Birthday" id="yKB-jn-NoI"/>
+                    <connections>
+                        <outlet property="dtpDate" destination="eAu-f4-P4I" id="JbM-6N-oZh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B7X-lc-dLn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
