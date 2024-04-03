@@ -28,6 +28,22 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if currentContact != nil {
+            txtName.text = currentContact!.contactName
+            txtAddress.text = currentContact!.streetAddress
+            txtCity.text = currentContact!.city
+            txtState.text = currentContact!.state
+            txtZip.text = currentContact!.zipcode
+            txtPhone.text = currentContact!.phoneNumber
+            txtCell.text = currentContact!.cellNumber
+            txtEmail.text = currentContact!.email
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            if currentContact!.birthday != nil {
+                lblBirthdate.text = formatter.string(from: currentContact!.birthday!)
+            }
+        }
 
         self.changeEditMode(self)
         
@@ -59,7 +75,7 @@ class ContactViewController: UIViewController, UITextFieldDelegate, DateControll
     func dateChanged(date: Date) {
         if currentContact == nil {
             let context = appDelegate.persistentContainer.viewContext
-            currentContact = Contact(context: context)
+            currentContact = Contact(context: context   )
         }
         currentContact?.birthday = date
         let formatter = DateFormatter()

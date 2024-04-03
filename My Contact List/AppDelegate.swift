@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let settings = UserDefaults.standard //declared as a constant 
         
         if ( settings.string(forKey: Constants.kSortField) == nil) {
-            settings.setValue("City", forKey: Constants.kSortField)
+            settings.setValue("city", forKey: Constants.kSortField)
         }
         if settings.string(forKey: Constants.kSortDirectionAscending) == nil {
             settings.setValue(true, forKey: Constants.kSortDirectionAscending)
@@ -52,7 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
-        let container = NSPersistentContainer(name: "My_Contact_List")
+        let container = NSPersistentContainer(name: "MyContactListModel")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error as NSError? {
                 // Replace this implementation with code to handle the error appropriately.

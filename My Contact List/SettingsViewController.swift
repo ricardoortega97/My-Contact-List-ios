@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
     @IBOutlet weak var pckSortField: UIPickerView!
     @IBOutlet weak var swAscending: UISwitch!
     //adds an array to store the items in the PickerView
-    let sortOrderItems: Array<String> = ["ContactName", "City", "Birthday"]
+    let sortOrderItems: Array<String> = ["contactName", "city", "birthday"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,13 +21,12 @@ class SettingsViewController: UIViewController, UIPickerViewDataSource, UIPicker
         pckSortField.delegate = self;
         // Do any additional setup after loading the view.
     }
+  
     @IBAction func sortDirectionChanged(_ sender: Any) {
         let settings = UserDefaults.standard
         settings.set(swAscending.isOn, forKey: Constants.kSortDirectionAscending)
         settings.synchronize()
-        
     }
-    //MARK: UIPickerViewDelegate Methods
     
     //Returns number of 'columns' to display
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
