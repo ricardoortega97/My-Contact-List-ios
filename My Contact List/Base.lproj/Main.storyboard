@@ -3,6 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -16,23 +17,49 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Map" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="805-4V-iea">
-                                <rect key="frame" x="179" y="416" width="46" height="29"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f5U-BI-3CA">
+                                <rect key="frame" x="0.0" y="59" width="393" height="710"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TM-WW-ID9">
+                                <rect key="frame" x="20" y="79" width="90" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Find Me!"/>
+                                <connections>
+                                    <action selector="findUser:" destination="sHL-Mh-rSe" eventType="touchUpInside" id="PnD-2j-NgY"/>
+                                </connections>
+                            </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="5oO-Sk-OzV">
+                                <rect key="frame" x="83" y="738" width="227" height="32"/>
+                                <segments>
+                                    <segment title="Standard"/>
+                                    <segment title="Hybrid"/>
+                                    <segment title="Satellite"/>
+                                </segments>
+                                <connections>
+                                    <action selector="mapTypeChanged:" destination="sHL-Mh-rSe" eventType="valueChanged" id="yXf-0U-fSD"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sln-BU-EZO"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="sln-BU-EZO" firstAttribute="trailing" secondItem="805-4V-iea" secondAttribute="trailing" constant="168" id="33W-yJ-F9U"/>
-                            <constraint firstItem="805-4V-iea" firstAttribute="top" secondItem="sln-BU-EZO" secondAttribute="top" constant="357" id="5ad-1i-aja"/>
-                            <constraint firstItem="805-4V-iea" firstAttribute="leading" secondItem="sln-BU-EZO" secondAttribute="leading" constant="179" id="Jdy-td-M20"/>
-                            <constraint firstItem="sln-BU-EZO" firstAttribute="bottom" secondItem="805-4V-iea" secondAttribute="bottom" constant="324" id="xsG-Ss-eyU"/>
+                            <constraint firstItem="f5U-BI-3CA" firstAttribute="top" secondItem="sln-BU-EZO" secondAttribute="top" id="2O9-18-R79"/>
+                            <constraint firstItem="sln-BU-EZO" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="9TM-WW-ID9" secondAttribute="trailing" symbolic="YES" id="82O-gr-4dd"/>
+                            <constraint firstItem="9TM-WW-ID9" firstAttribute="top" secondItem="sln-BU-EZO" secondAttribute="top" constant="20" id="AMu-4I-Jwo"/>
+                            <constraint firstItem="f5U-BI-3CA" firstAttribute="leading" secondItem="sln-BU-EZO" secondAttribute="leading" id="FQI-wy-L28"/>
+                            <constraint firstItem="sln-BU-EZO" firstAttribute="trailing" secondItem="f5U-BI-3CA" secondAttribute="trailing" id="dsS-Mb-DiG"/>
+                            <constraint firstItem="5oO-Sk-OzV" firstAttribute="centerX" secondItem="f5U-BI-3CA" secondAttribute="centerX" id="epo-mG-mqI"/>
+                            <constraint firstItem="9TM-WW-ID9" firstAttribute="leading" secondItem="Xf5-eh-mAk" secondAttribute="leading" constant="20" id="uMo-Pj-VBD"/>
+                            <constraint firstItem="sln-BU-EZO" firstAttribute="bottom" secondItem="f5U-BI-3CA" secondAttribute="bottom" id="v0d-Ef-07N"/>
+                            <constraint firstItem="5oO-Sk-OzV" firstAttribute="bottom" secondItem="sln-BU-EZO" secondAttribute="bottom" id="xcq-GQ-x4G"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Map" image="map" catalog="system" id="qqr-t7-nQQ"/>
+                    <connections>
+                        <outlet property="mapView" destination="f5U-BI-3CA" id="zCu-Pj-G1b"/>
+                        <outlet property="sgmtMapType" destination="5oO-Sk-OzV" id="EMb-jQ-YHA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cf-cu-Z8c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,7 +216,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nGO-Ls-MUX">
                                                                 <rect key="frame" x="0.0" y="28.333333333333314" width="171.66666666666666" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" smartDashesType="yes" textContentType="tel"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -205,7 +232,7 @@
                                                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9N8-lb-GZH">
                                                                 <rect key="frame" x="0.0" y="28.333333333333314" width="171.33333333333334" height="34"/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="phonePad" textContentType="tel"/>
                                                             </textField>
                                                         </subviews>
                                                     </stackView>
@@ -347,16 +374,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kOF-8N-rXz">
-                                            <rect key="frame" x="19.999999999999996" y="5" width="37.666666666666664" height="24"/>
+                                            <rect key="frame" x="20" y="8.3333333333333357" width="30" height="18"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vqh-AD-Tkg">
-                                            <rect key="frame" x="19.999999999999996" y="29" width="52.666666666666664" height="18"/>
+                                            <rect key="frame" x="20.000000000000004" y="29" width="37.333333333333336" height="12"/>
                                             <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>

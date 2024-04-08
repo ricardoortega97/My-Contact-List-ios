@@ -12,6 +12,7 @@
 		510BE20F2B9C275D0003FF6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 510BE20D2B9C275D0003FF6A /* Main.storyboard */; };
 		510BE2142B9C275F0003FF6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 510BE2132B9C275F0003FF6A /* Assets.xcassets */; };
 		510BE2172B9C275F0003FF6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 510BE2152B9C275F0003FF6A /* LaunchScreen.storyboard */; };
+		512C57552BC393E800859BBA /* MapPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 512C57542BC393E800859BBA /* MapPoint.swift */; };
 		5144C8B12B9C2FEA0078583B /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144C8B02B9C2FEA0078583B /* ContactViewController.swift */; };
 		5144C8B32B9C30E40078583B /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144C8B22B9C30E40078583B /* MapViewController.swift */; };
 		5144C8B52B9C30F20078583B /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5144C8B42B9C30F20078583B /* SettingsViewController.swift */; };
@@ -29,6 +30,7 @@
 		510BE2132B9C275F0003FF6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		510BE2162B9C275F0003FF6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		510BE2182B9C275F0003FF6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		512C57542BC393E800859BBA /* MapPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapPoint.swift; sourceTree = "<group>"; };
 		5144C8B02B9C2FEA0078583B /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		5144C8B22B9C30E40078583B /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		5144C8B42B9C30F20078583B /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				510BE2152B9C275F0003FF6A /* LaunchScreen.storyboard */,
 				510BE2182B9C275F0003FF6A /* Info.plist */,
 				5144C8B22B9C30E40078583B /* MapViewController.swift */,
+				512C57542BC393E800859BBA /* MapPoint.swift */,
 				5144C8B42B9C30F20078583B /* SettingsViewController.swift */,
 			);
 			path = "My Contact List";
@@ -163,6 +166,7 @@
 				510BE20A2B9C275D0003FF6A /* SceneDelegate.swift in Sources */,
 				51A62F432BB210CF00B575C1 /* MyContactListModel.xcdatamodeld in Sources */,
 				51A62F472BB21F6A00B575C1 /* DateViewController.swift in Sources */,
+				512C57552BC393E800859BBA /* MapPoint.swift in Sources */,
 				5144C8B12B9C2FEA0078583B /* ContactViewController.swift in Sources */,
 				5175E6482BBB447B00653445 /* ContactsTableViewController.swift in Sources */,
 			);

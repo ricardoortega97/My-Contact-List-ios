@@ -41,7 +41,7 @@ class ContactsTableViewController: UITableViewController {
         // Configure the cell...
         let contact = contacts[indexPath.row] as? Contact
         //under the prototype cell, the details of the individual is displayed
-        cell.textLabel?.text = (contact?.contactName)! + " From " + (contact?.city)!
+        cell.textLabel?.text = (contact?.contactName)! + " From " + (contact?.city)! + " " + (contact?.phoneNumber)!
         let formatter = DateFormatter()
         formatter.dateStyle = .long //displays Full month while .short displays in MM/DD/YYYY
         cell.detailTextLabel?.text = "Born on: " + formatter.string(from: contact!.birthday!)
